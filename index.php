@@ -8,7 +8,7 @@ if($_POST){
             case '-':$resultado=subtract($valores);break;
             case 'x':$resultado=multiply($valores);break;
             case '÷':$resultado=divide($valores);break;
-            default: 'Opcion no Erronea';
+            default: 'Opcion Erronea';
         }
     }else{
         echo 'No has Escrito los numeros';
@@ -21,9 +21,7 @@ function add($valores){
 }
 
 function subtract($valores){
-
     $client = new SoapClient("http://www.dneonline.com/calculator.asmx?WSDL");
-
     $resultado=$client->Subtract($valores)->SubtractResult;
     return $resultado;
 }

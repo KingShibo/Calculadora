@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<definitions name="FuncionesServicio" 
+    targetNamespace="urn:funciones"
+     xmlns:tns="urn:funciones"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns="http://schemas.xmlsoap.org/wsdl/">
+ 
+  <message name="funcionesPeticion">
+    <part name="operando1" type="xsd:float" />
+    <part name="operando2" type="xsd:float" />
+  </message>
+ 
+  <message name="funcionesRespuesta">
+    <part name="respuesta" type="xsd:float" />
+  </message>
+ 
+  <portType name="funcionesPort">
+    <operation name="sumar">
+      <input message="tns:funcionesPeticion" />
+      <output message="tns:funcionesRespuesta" />
+    </operation>
+    <operation name="restar">
+      <input message="tns:funcionesPeticion" />
+      <output message="tns:funcionesRespuesta" />
+    </operation>
+  </portType>
+ 
+  <binding name="funcionesBinding" type="tns:funcionesPort">
+    <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="sumar">
+        <soap:operation soapAction="urn:funciones#sumar" />
+        <input>
+          <soap:body use="encoded" namespace="urn:funciones"
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:funciones"
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </output>
+    </operation>
+    <operation name="restar">
+        <soap:operation soapAction="urn:funciones#restar" />
+        <input>
+          <soap:body use="encoded" namespace="urn:funciones"
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />       
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:funciones"
+                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />       
+        </output>
+    </operation>
+  </binding>
+ 
+  <service name="funcionesServicio">
+    <port name="funcionesPort" binding="tns:funcionesBinding">
+      <soap:address location="http://localhost/calculadora/servidor.php" />
+    </port>
+  </service>
+</definitions>

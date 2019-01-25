@@ -26,6 +26,14 @@
       <input message="tns:funcionesPeticion" />
       <output message="tns:funcionesRespuesta" />
     </operation>
+    <operation name="multiplicar">
+      <input message="tns:funcionesPeticion" />
+      <output message="tns:funcionesRespuesta" />
+    </operation>
+    <operation name="dividir">
+      <input message="tns:funcionesPeticion" />
+      <output message="tns:funcionesRespuesta" />
+    </operation>
   </portType>
  
   <binding name="funcionesBinding" type="tns:funcionesPort">
@@ -33,23 +41,37 @@
     <operation name="sumar">
         <soap:operation soapAction="urn:funciones#sumar" />
         <input>
-          <soap:body use="encoded" namespace="urn:funciones"
-                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
         </input>
         <output>
-          <soap:body use="encoded" namespace="urn:funciones"
-                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
         </output>
     </operation>
     <operation name="restar">
         <soap:operation soapAction="urn:funciones#restar" />
         <input>
-          <soap:body use="encoded" namespace="urn:funciones"
-                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />       
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />       
         </input>
         <output>
-          <soap:body use="encoded" namespace="urn:funciones"
-                     encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />       
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />       
+        </output>
+    </operation>
+    <operation name="multiplicar">
+        <soap:operation soapAction="urn:funciones#multiplicar" />
+        <input>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </output>
+    </operation>
+    <operation name="dividir">
+        <soap:operation soapAction="urn:funciones#dividr" />
+        <input>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
         </output>
     </operation>
   </binding>

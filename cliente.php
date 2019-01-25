@@ -7,25 +7,14 @@ if($_POST){
     if(!empty($_POST['intA']) && !empty($_POST['intB'])){
         switch($_POST['opcion']){
             case '+':$resultado=$cliente->sumar($_POST['intA'],$_POST['intB']);break;
-            case '-':$resultado=$resultado=$cliente->restar($_POST['intA'],$_POST['intB']);break;
-            case 'x':$resultado=multiply();break;
-            case '÷':$resultado=divide();break;
+            case '-':$resultado=$cliente->restar($_POST['intA'],$_POST['intB']);break;
+            case 'X':$resultado=$cliente->multiplicar($_POST['intA'],$_POST['intB']);break;
+            case '÷':$resultado=$cliente->dividir($_POST['intA'],$_POST['intB']);break;
             default: echo 'Opcion Erronea';
         }
     }else{
         echo 'No has Escrito los numeros';
     }
-}
-
-
-function multiply($valores){
-    $resultado=$cliente->Multiply($valores)->MultiplyResult;
-    return $resultado;
-}
-
-function divide($valores){
-    $resultado=$cliente->Divide($valores)->DivideResult;
-    return $resultado;
 }
 
 

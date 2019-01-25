@@ -12,6 +12,10 @@
     <part name="operando1" type="xsd:float" />
     <part name="operando2" type="xsd:float" />
   </message>
+  
+  <message name="funcionPeticionSolo">
+    <part name="operando1" type="xsd:float" />
+  </message>
  
   <message name="funcionesRespuesta">
     <part name="respuesta" type="xsd:float" />
@@ -32,6 +36,22 @@
     </operation>
     <operation name="dividir">
       <input message="tns:funcionesPeticion" />
+      <output message="tns:funcionesRespuesta" />
+    </operation>
+    <operation name="raiz">
+      <input message="tns:funcionPeticionSolo" />
+      <output message="tns:funcionesRespuesta" />
+    </operation>
+    <operation name="seno">
+      <input message="tns:funcionPeticionSolo" />
+      <output message="tns:funcionesRespuesta" />
+    </operation>
+    <operation name="coseno">
+      <input message="tns:funcionPeticionSolo" />
+      <output message="tns:funcionesRespuesta" />
+    </operation>
+    <operation name="tangente">
+      <input message="tns:funcionPeticionSolo" />
       <output message="tns:funcionesRespuesta" />
     </operation>
   </portType>
@@ -67,6 +87,42 @@
     </operation>
     <operation name="dividir">
         <soap:operation soapAction="urn:funciones#dividr" />
+        <input>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </output>
+    </operation>
+    <operation name="raiz">
+        <soap:operation soapAction="urn:funciones#raiz" />
+        <input>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </output>
+    </operation>
+    <operation name="seno">
+        <soap:operation soapAction="urn:funciones#seno" />
+        <input>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </output>
+    </operation>
+    <operation name="coseno">
+        <soap:operation soapAction="urn:funciones#coseno" />
+        <input>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </input>
+        <output>
+          <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+        </output>
+    </operation>
+    <operation name="tangente">
+        <soap:operation soapAction="urn:funciones#tangente" />
         <input>
           <soap:body use="encoded" namespace="urn:funciones" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
         </input>
